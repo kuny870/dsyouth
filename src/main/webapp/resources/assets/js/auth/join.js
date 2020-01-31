@@ -37,7 +37,7 @@ function fnGetCtgSub(sParam){
 //회원가입
 $("#joinForm").submit(function(e) {
 
-	var idRegex = /^[a-z]{4,15}$/g;
+	var idRegex = /^[a-z]{4,15}/g;
 	var dateOfBirthRegex=/^[0-9]{6}$/;
 	var htelRegex=/^[0-9]{10,11}$/;
 	
