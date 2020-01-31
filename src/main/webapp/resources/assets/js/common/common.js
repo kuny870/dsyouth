@@ -40,10 +40,7 @@ function excelDown(year, month) {
 }
 
 // input 자리수 제한
-function numberMaxLength2(e) { if(e.value.length > e.maxLength) { e.value = e.value.slice(0, e.maxLength); }}
-function numberMaxLength4(e) { if(e.value.length > e.maxLength) { e.value = e.value.slice(0, e.maxLength); }}
-function numberMaxLength6(e) { if(e.value.length > e.maxLength) { e.value = e.value.slice(0, e.maxLength); }}
-function numberMaxLength11(e) { if(e.value.length > e.maxLength) { e.value = e.value.slice(0, e.maxLength); }}
+function numberMaxLength(e) { if(e.value.length > e.maxLength) { e.value = e.value.slice(0, e.maxLength); }}
 
 // 페이지 이동
 function mypage() {location.href = contextPath + "/mypage";}				// mypage

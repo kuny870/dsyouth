@@ -119,7 +119,7 @@
 					        	<input type="hidden" id="regUser" name="regUser" value="${login.id }" />
 					        
 					        	<div style="text-align: center;">
-					 	        	<input type="number" pattern="\d*" class="md-input" id="birthYear" name="birthYear" placeholder="ex) 1987" maxlength="4" oninput="numberMaxLength4(this);" autocomplete="off"></input>
+					 	        	<input type="number" pattern="\d*" class="md-input" id="birthYear" name="birthYear" placeholder="ex) 1987" maxlength="4" oninput="numberMaxLength(this);" autocomplete="off"></input>
 					 	        </div>
 						        <div class="form-bottom" style="text-align:center;">
 					            	<button class="btn md-button" type="submit">추가</button>
