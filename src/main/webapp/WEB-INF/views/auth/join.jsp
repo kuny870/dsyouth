@@ -26,7 +26,7 @@
                 <form enctype="application/x-www-form-urlencoded" id="joinForm">
                     <div class="form-middle">
                         <label>
-                            <input type="text" class="md-input" id="loginId" name="loginId" placeholder="아이디 (필수)" value="" autocomplete="off">
+                            <input type="text" class="md-input" id="loginId" name="loginId" placeholder="아이디 - 영문시작  4-12자리 (필수)" value="" autocomplete="off">
                         </label>
                         <label>
                             <input type="password" class="md-input" id="loginPw" name="loginPw" placeholder="비밀번호 - 6자 이상 (필수)" value="" autocomplete="off">
