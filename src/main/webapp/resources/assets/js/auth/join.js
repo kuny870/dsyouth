@@ -37,7 +37,7 @@ function fnGetCtgSub(sParam){
 //회원가입
 $("#joinForm").submit(function(e) {
 
-	var idRegex = /^[A-za-z]/g;
+	var idRegex = /^[a-z]{4,15}/g;
 	var dateOfBirthRegex=/^[0-9]{6}$/;
 	var htelRegex=/^[0-9]{10,11}$/;
 	
@@ -59,7 +59,7 @@ $("#joinForm").submit(function(e) {
 		validateMessage = '아이디를 입력해 주세요.';
 		validateFocus = $loginId;
 	} else if (idRegex.test($loginId.val())===false) {
-		validateMessage = '아이디는 영문으로 시작해야 합니다.';
+		validateMessage = '아이디는 소문자 영문으로 시작해야 하며 4-15자리이여야 합니다.';
 		validateFocus = $loginId;
 	} else if ($loginPw.val() == "") {
 		validateMessage = '비밀번호를 입력해 주세요.';
