@@ -126,7 +126,7 @@
 		    , at.fourth_week AS fourth_week
 		    , at.fifth_week AS fifth_week
 			, m.id AS m_id
-			, if(m.team_id = '4', substring(m.name, 3), m.name) AS m_name
+			, m.name AS m_name
 			, m.guider AS m_guider
 		    , m.depart_id AS m_depart_id
 		    , m.team_id AS m_team_id

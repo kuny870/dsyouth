@@ -100,15 +100,14 @@
            	<div class="window">
                 <div style="width:100%; height:100%; text-align:center; vertical-align:middle;">
                 	<div style="font-size: 15px; font-weight: 700">[ 공 지 ]</div><br/>
-                	<div>1. 새가족 팀원</div>
-                	<div>등록일/수료일 입력 기능</div>
-                	<div>추가되었습니다.</div>
+                	<div>1. 설명절</div>
+                	<div>주일(26일) 2부순서는</div>
+                	<div>팀모임입니다.</div>
                 	<br/>
-                	<div>2. 가족 편성표</div>
-                	<div>준비 중입니다.</div>
+                	<div>새해 복 많이 받으세요^^</div>
                 </div>
 				<p style="text-align:center; background:#ffffff; padding:5px; margin-top:20px;">
-					<button class="notice-close-btn" onclick="todayClose('notice',1)" style="margin-right: 3px;">오늘 열지 않음</button>
+					<button class="notice-close-btn" onclick="todayClose('notice',7)" style="margin-right: 3px;">7일간 보지 않음</button>
 					<button class="notice-close-btn close" style="margin-left: 3px;">닫기</button>
 				</p>
             </div>
