@@ -17,66 +17,72 @@
     <link href="${resourcesPath}/assets/css/reset.css?${nowTime}" rel="stylesheet">
 	<link href="${resourcesPath}/assets/css/common.css?${nowTime}" rel="stylesheet">
 	<link href="${resourcesPath}/assets/css/general.css?${nowTime}" rel="stylesheet">
+	<link href="${resourcesPath}/assets/css/attendance.css?${nowTime}" rel="stylesheet">
   </head>
   <body>
+
     <div class="container">
     
             <div class="header-product">
+            <div class="header-att">
    				<span class="shop-link-login" onclick="mypage()">
    					<img src="${resourcesPath}/assets/images/back_btn.png" class="back-img">
    				</span>
-			    <p class="main_title text-center">
+			    <div class="main-title-att text-center">
 			    	출석부
 			    	<img src="${resourcesPath }/assets/images/download_att.jpg" class="attendance-img" onclick="excelDownPopup()">
-			    </p>
-            
+			    </div>
+            </div>
 				<div class="div-container">
                     
-					<div class="customer-select-search" style="width: 37.3%; margin-left:5%; float: left;">
-						 <select class="select-attendance-list-team" id="teamId" name="teamId">
-	                       	<c:forEach var="team" items="${teamList }">
-	                       		<c:set var="selected" value="" />
-							        <c:if test="${team.id eq attendanceSearch.teamId }">
+                    <div class="search-div">
+						<div class="customer-select-search" style="width: 37.3%; margin-left:5%; float: left;">
+							 <select class="select-attendance-list-team" id="teamId" name="teamId">
+		                       	<c:forEach var="team" items="${teamList }">
+		                       		<c:set var="selected" value="" />
+								        <c:if test="${team.id eq attendanceSearch.teamId }">
+											<c:set var="selected" value="selected" />
+										</c:if>
+									<option value="${team.id}" ${selected} >${team.tShortName}</option>
+								</c:forEach>
+		                    </select> 
+	                    </div>
+	                    
+	                    <div class="customer-select-search" style="width: 22%; margin-left: -27px; float: left;">
+							<!-- 년 선택 -->
+	                   		<select class="select-attendance-list-year" id="year" name="year">
+		                       	<c:forEach var="year" items="${yearList }">
+		                       		<c:set var="selected" value="" />
+									<c:if test="${year eq attendanceSearch.year }">
 										<c:set var="selected" value="selected" />
 									</c:if>
-								<option value="${team.id}" ${selected} >${team.tShortName}</option>
-							</c:forEach>
-	                    </select> 
-                    </div>
-                    
-                    <div class="customer-select-search" style="width: 22%; margin-left: -27px; float: left;">
-						<!-- 년 선택 -->
-                   		<select class="select-attendance-list-year" id="year" name="year">
-	                       	<c:forEach var="year" items="${yearList }">
-	                       		<c:set var="selected" value="" />
-								<c:if test="${year eq attendanceSearch.year }">
-									<c:set var="selected" value="selected" />
-								</c:if>
-								<option value="${year}" ${selected} >${year}년</option>
-							</c:forEach>
-	                    </select>
-                    </div>    
-                    
-                    <div class="customer-select-search" style="width: 20%; margin-left: 3%; float: left;">
-						<!-- 월 선택 -->
-                   		<select class="select-attendance-list-month" id="month" name="month">
-	                       	<c:forEach var="month" items="${SMonthSearchType }">
-	                       		<c:set var="selected" value="" />
-								<c:if test="${month.getVName() eq attendanceSearch.month }">
-									<c:set var="selected" value="selected" />
-								</c:if>
-								<option value="${month.getVName()}" ${selected} >${month.getVName()}월</option>
-							</c:forEach>
-	                    </select>
-                    </div>    
-                    
-		            <div>
-		            	<button class="basic-btn attendance-list-btn" onclick="attendanceSearch()">조회</button>
-		            </div>
+									<option value="${year}" ${selected} >${year}년</option>
+								</c:forEach>
+		                    </select>
+	                    </div>    
+	                    
+	                    <div class="customer-select-search" style="width: 20%; margin-left: 3%; float: left;">
+							<!-- 월 선택 -->
+	                   		<select class="select-attendance-list-month" id="month" name="month">
+		                       	<c:forEach var="month" items="${SMonthSearchType }">
+		                       		<c:set var="selected" value="" />
+									<c:if test="${month.getVName() eq attendanceSearch.month }">
+										<c:set var="selected" value="selected" />
+									</c:if>
+									<option value="${month.getVName()}" ${selected} >${month.getVName()}월</option>
+								</c:forEach>
+		                    </select>
+	                    </div>    
+	                    
+			            <div>
+			            	<button class="basic-btn attendance-list-btn" onclick="attendanceSearch()">조회</button>
+			            </div>
+			        </div>
 
                     
+                    <div class="attendance-table">
 					<div class="sales-table">
-			            <div class="table-wrap">
+			            <div class="table-wrap2">
 
 			                <table>
 			                    <thead>
@@ -347,6 +353,7 @@
 			                
 			            </div>
 			        </div>
+			        </div>
 	
 				</div>
 				
@@ -364,7 +371,6 @@
 			
 	    	</div>
 	    </div>    
-
   </body>
   
   <script src="${resourcesPath}/assets/js/attendance/list.js?${nowTime}"></script>

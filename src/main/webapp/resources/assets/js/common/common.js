@@ -13,14 +13,16 @@ $(document).ready(function(){
 	// 맨 상단 타이틀 글자크기에 따른 폰트 조절
 	var headTitle = $(".head_title").html();
 	
-	if(headTitle.length > 15 && headTitle.length < 22) {
-		$(".head_title").addClass('font-size-5vw');
-	}else if(headTitle.length >= 22 && headTitle.length < 25){
-		$(".head_title").addClass('font-size-4p5vw');
-	}else if(headTitle.length >= 25 && headTitle.length < 28){
-		$(".head_title").addClass('font-size-4vw');
-	}else if(headTitle.length >= 28){
-		$(".head_title").addClass('font-size-3p5vw');
+	if(headTitle != null){
+		if(headTitle.length > 15 && headTitle.length < 22) {
+			$(".head_title").addClass('font-size-5vw');
+		}else if(headTitle.length >= 22 && headTitle.length < 25){
+			$(".head_title").addClass('font-size-4p5vw');
+		}else if(headTitle.length >= 25 && headTitle.length < 28){
+			$(".head_title").addClass('font-size-4vw');
+		}else if(headTitle.length >= 28){
+			$(".head_title").addClass('font-size-3p5vw');
+		}
 	}
 	
 });

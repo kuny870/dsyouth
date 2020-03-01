@@ -165,7 +165,7 @@ $(document).ready(function(){
 	
 	
 	// 웹페이지가 처음 로딩되었을 때
-    router('/');
+//    router('/');
     
      // history entry가 변경되면 발생하는 이벤트
 	  // PJAX 방식은 hash를 사용하지 않으므로 hashchange 이벤트를 사용할 수 없다.
@@ -180,9 +180,9 @@ $(document).ready(function(){
 	  
 });
 
-function router(path) {
-    (routes[path] || routes.otherwise)(path);
-  }
+//function router(path) {
+//    (routes[path] || routes.otherwise)(path);
+//  }
 
 
 function get(url) {
@@ -248,7 +248,7 @@ $("#loginForm").submit(function(e) {
           success: function(result)
           {
               if(result.success) { // show response from the php script.
-            	  location.href= contextPath + "/mypage";
+//            	  location.href= contextPath + "/mypage";
             	  
             	  
             	  // SPA - PJAX 방식
@@ -288,30 +288,30 @@ $("#loginForm").submit(function(e) {
 
 
             	  //Server
-            	  const express = require('express');
-               	  const app = express();
-               	  const fs = require('fs');
-
-               	  app.get(contextPath + '/mypage', (req, res) => {
-               	    res.format({
-               	      // 새로고침에 의한 브라우저 요청
-               	      'text/html': function(){
-               	        res.sendFile(path.join(__dirname + contextPath + '/mypage'));
-               	      },
-               	      // AJAX 요청
-               	      'application/json': function(){
-               	        res.send(JSON.parse(fs.readFileSync(contextPath + '/mypage', 'utf8')));
-               	      },
-               	      'default': function() {
-               	        // log the request and respond with 406
-               	        res.status(406).send('Not Acceptable');
-               	      }
-               	    });
-               	  });
-
-               	  app.listen(3000, function () {
-               	    console.log('listening on http//localhost:3000');
-               	  });
+//            	  const express = require('express');
+//               	  const app = express();
+//               	  const fs = require('fs');
+//
+//               	  app.get(contextPath + '/mypage', (req, res) => {
+//               	    res.format({
+//               	      // 새로고침에 의한 브라우저 요청
+//               	      'text/html': function(){
+//               	        res.sendFile(path.join(__dirname + contextPath + '/mypage'));
+//               	      },
+//               	      // AJAX 요청
+//               	      'application/json': function(){
+//               	        res.send(JSON.parse(fs.readFileSync(contextPath + '/mypage', 'utf8')));
+//               	      },
+//               	      'default': function() {
+//               	        // log the request and respond with 406
+//               	        res.status(406).send('Not Acceptable');
+//               	      }
+//               	    });
+//               	  });
+//
+//               	  app.listen(3000, function () {
+//               	    console.log('listening on http//localhost:3000');
+//               	  });
             	  
             	  
             	  

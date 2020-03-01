@@ -6,7 +6,7 @@
     <jsp:include page="/WEB-INF/views/layouts/header.jsp" flush="false" />
     
     <!-- TODO : 공지 레이어 팝업 -->
-    <%-- <jsp:include page="/WEB-INF/views/admin/pop/notice.jsp" flush="false" /> --%>
+    <jsp:include page="/WEB-INF/views/admin/pop/notice.jsp" flush="false" />
 
 	<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 	<c:set var="resourcesPath" value="${contextPath}/resources" />
@@ -60,11 +60,19 @@
 	                    </div>
 	                </div>
 	                
+	                <!-- 동기 -->
+	                <h3>동기</h3>
+					<div class="mypage-rows">
+	                    <div class="mypage-row">
+	                        <a href="${contextPath }/samePeriod/list">동기 모임</a>
+	                    </div>
+	                </div>
+	                
 	                <!-- 수련회 -->
-	                <h3>수련회</h3>
+	                <%-- <h3>수련회</h3>
 	                <div class="mypage-rows">
 	                	<div class="mypage-row">
-               				<%-- <a href="${contextPath }/retreat/list">가족 편성표</a> --%>
+               				<a href="${contextPath }/retreat/list">가족 편성표</a>
                				<a href="#" onclick="alert('준비중 입니다.')">가족 편성표</a>
 	                    </div>
 	                	<c:if test="${login.loginId == 'admin' 
@@ -79,21 +87,14 @@
 	                      		<a href="${contextPath }/admin/retreat/list">수련회 관리</a>
 		                    </div>
 	                    </c:if>
-	                </div>
+	                </div> --%>
 				
-					<h3>동기</h3>
-					<div class="mypage-rows">
-	                    <div class="mypage-row">
-	                        <a href="${contextPath }/samePeriod/list">동기 모임</a>
-	                    </div>
-	                </div>
-				
-					<h3>리더 자료</h3>
+					<%-- <h3>리더 자료</h3>
 	                <div class="mypage-rows">
 	                    <div class="mypage-row">
 	                        <a href="${contextPath }/leaderInfo/list">리더배포자료</a>
 	                    </div>
-	                </div>
+	                </div> --%>
               	</c:if>
 	            
 	            <%-- <h3>말씀</h3>

@@ -322,7 +322,7 @@
 
 .div-container {
 	margin-top: 6%;
-	margin-bottom: 30%;
+	margin-bottom: 25%;
 	/* margin-top: 3%;
 	margin-bottom: 35%; */
 }
@@ -2022,7 +2022,6 @@
     vertical-align: bottom;
 }
 
-/*筌롫뗄�뵥*/
 .main-header > nav ul > li{
     display: inline;
 }
@@ -2091,7 +2090,6 @@
     margin: 1.7777777777vw 0 0 0;
 }
 
-/*占쎈솇筌띲끉�뻿筌ｏ옙*/
 .sales-wrap{
     padding: 12.4444444444vw 0 0 6.4vw;
 }
@@ -2148,7 +2146,6 @@
     padding: 7.1111111111vw 0;
 }
 
-/* �뜮袁⑹グ占쎈빍占쎈뮞 占쎌뵥筌앾옙*/
 .guide-wrap > .business-guide-word{
     padding: 26.6666666666vw 0 6.2222222222vw 0;
     font-size: 4vw;
@@ -2158,7 +2155,6 @@
     font-size: 4vw;
     font-weight: 700;
 }
-/*占쎈솇筌띲끉�뻿筌ｏ옙�뵳�딅뮞占쎈뱜*/
 .sales-list{
     padding: 5.0666666666vw 0 0 0;
 }
@@ -2257,7 +2253,6 @@
     background-color: unset;
 
 }
-/*占쎈솁占쎈뱜占쎄섐筌≪뼐由�*/
 .partner-row > .partner-wrap{
     position: relative;
     padding: 4.444444444vw;
@@ -2318,7 +2313,6 @@
     font-size: 2.8444444444vw;
 }
 
-/*占쎈솇筌띲끇媛숋옙�꽊�꽴占썹뵳占�*/
 .sales-row > .sales-wrap{
     position: relative;
     padding: 4.444444444vw 4.444444444vw 0 4.444444444vw;
@@ -2392,17 +2386,17 @@
     font-weight: 700;
 }
 
-/*占쎈솇筌띲끇媛숋옙�꽊�꽴占썹뵳占� 占쎈�믭옙�뵠�뇡占�*/
-.sales-table > .table-wrap{
-    width: 91.6444444444vw;
-    padding: 3.4666666666vw 0 0 0;
-    margin: 0 auto;
-}
 .sales-table > .table-wrap > table{
     width: 100%;
     border: 1px solid #fff;
     text-align: center;
     table-layout: fixed;
+}
+	
+.sales-table > .table-wrap {
+    width: 91.6444444444vw;
+    padding: 3.4666666666vw 0 0 0;
+    margin: 0 auto;
 }
 .sales-table > .table-wrap > table th{
     color: #343a40;
@@ -2611,3 +2605,46 @@
     width: 66.6666666666vw;
 }
 */
+
+/* 2020.03.02 패드용 추가! */
+@media (min-width: 576px) {
+	.layer_fixed3 {
+		height: 70px;
+		padding-top: 5px;
+	}
+	.btn {
+		font-size: 22px !important;
+	}
+	.window{
+	    position: fixed;
+	    width: 36%;
+	    left: 50%;
+	    margin-left: -18%; /* half of width */
+	    /* height: 300px; */
+	    top: 50%;
+	    margin-top: -150px; /* half of height */
+	    overflow: auto;
+	
+	    /* decoration */
+	    border: 1px solid #000;
+	    background-color: #eee;
+	    padding: 1em;
+	    box-sizing: border-box;
+	    
+	    display: none;
+	    background-color:#FFF;
+	    z-index:10000;
+	 }
+	 .notice-title {
+	 	font-size: 22px !important;
+	 }
+	 .notice-content-1 {
+	 	font-size: 18px !important;
+	 }
+ 	 .notice-content-2 {
+ 		font-size: 18px !important;
+	 }
+ 	 .notice-content-3 {
+	 	font-size: 18px !important;
+	 }
+}
