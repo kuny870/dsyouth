@@ -82,7 +82,7 @@
         
         
         cookiedata = document.cookie; 
-        if ( cookiedata.indexOf("notice=done") < 0 ) {
+        if ( cookiedata.indexOf("notice-20200302=done") < 0 ) {
         	$("#mask, .window").show();
         }else {
         	$("#mask, .window").hide(); 
@@ -99,7 +99,7 @@
             <div id="mask"></div>
            	<div class="window">
                 <div style="width:100%; height:100%; text-align:center; vertical-align:middle;">
-                	<div class="notice-title" style="font-size: 15px; font-weight: 700">[ 업데이트 ]</div><br/>
+                	<div class="notice-title" style="font-size: 15px; font-weight: 700">[ 3월 2일 업데이트 ]</div><br/>
                 	<div class="notice-content-1">1. 출석부</div>
                 	<div class="notice-content-2">패드용 출석부가</div>
                 	<div class="notice-content-3">업데이트 되었습니다.^^</div>
