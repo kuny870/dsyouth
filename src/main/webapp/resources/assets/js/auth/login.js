@@ -229,7 +229,11 @@ $("#loginForm").submit(function(e) {
     // input 데이터 체크 및 팝업창 띄워주고 포커스
     if(validateMessage != null) {
          validateFocus.focus();
-         alert(validateMessage);
+         Swal.fire({
+             text: validateMessage,
+             confirmButtonText: '확인',
+             allowOutsideClick: true
+         });
          return false;
     }
     
@@ -316,11 +320,20 @@ $("#loginForm").submit(function(e) {
             	  
             	  
               }else {
-                  alert(result.message);
+            	  Swal.fire({
+	                    text: result.message,
+	                    confirmButtonText: '확인',
+	                    allowOutsideClick: true
+	                });
+
               }
           },
           fail: function(result) {
-              alert("로그인에 실패 했습니다.");
+        	  Swal.fire({
+                  text: "로그인에 실패 했습니다",
+                  confirmButtonText: '확인',
+                  allowOutsideClick: true
+              });
           }
     });
     e.preventDefault(); // avoid to execute the actual submit of the form.
@@ -346,11 +359,20 @@ function logout(val) {
           if(result.success) { // show response from the php script.
         	  location.href = contextPath + "/login";
           }else {
-        	  alert(result.message);
+        	  Swal.fire({
+                  text: result.message,
+                  confirmButtonText: '확인',
+                  allowOutsideClick: true
+              });
+
           }
       },
 	  fail: function(result) {
-		  alert("로그아웃에 실패 했습니다.");
+		  Swal.fire({
+              text: "로그아웃에 실패 했습니다",
+              confirmButtonText: '확인',
+              allowOutsideClick: true
+          });
 	  }
 	});
 }
@@ -359,11 +381,17 @@ function logout(val) {
 // 회원 탈퇴
 function withdraw(val) {
 	
-	var conf = confirm('정말 탈퇴 하시겠습니까?');
-
-	if(conf){
-
-		var url = contextPath + "/rest/withdraw"
+	Swal.fire({
+        title: '회원 탈퇴',
+        html: '정말 탈퇴 하시겠습니까?',
+        showCancelButton: true,
+        cancelButtonText: '취소',
+        confirmButtonText: '확인',
+        allowOutsideClick: true,
+        reverseButtons: true
+    }).then(function (isConfirm) {
+    	
+    	var url = contextPath + "/rest/withdraw"
 		
 		$.ajax({
 	          type: "POST",
@@ -376,14 +404,24 @@ function withdraw(val) {
 	              if(result.success) { // show response from the php script.
 	            	  location.href = contextPath + "/login";
 	              }else {
-	            	  alert(result.message);
+	            	  Swal.fire({
+		                    text: result.message,
+		                    confirmButtonText: '확인',
+		                    allowOutsideClick: true
+		                });
+
 	              }
 	          },
 	   		  fail: function(result) {
-	   			  alert("회원탈퇴에 실패 했습니다.");
+	   			Swal.fire({
+                    text: "회원탈퇴에 실패 했습니다",
+                    confirmButtonText: '확인',
+                    allowOutsideClick: true
+                });
 	   		  }
 	    });
-	}
+
+    });
 
 }
 
@@ -392,7 +430,11 @@ function withdraw(val) {
 $("#linkCopy").click(function(e) {
 	
 	copyToClipboard(document.location.origin + contextPath + "/login");
-	alert("링크가 복사 되었습니다.");
+	Swal.fire({
+        text: "링크가 복사 되었습니다",
+        confirmButtonText: '확인',
+        allowOutsideClick: true
+    });
 	
 	e.preventDefault(); // avoid to execute the actual submit of the form.
    

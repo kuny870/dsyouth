@@ -23,7 +23,11 @@ function fnGetCtgSub(sParam){
 	            }
 	        }, error:function(xhr){
 	            console.log(xhr.responseText);
-	            alert("팀 정보를 불러오는데 실패 했습니다.");
+	            Swal.fire({
+                    text: "팀 정보를 불러오는데 실패 했습니다",
+                    confirmButtonText: '확인',
+                    allowOutsideClick: true
+                });
 	            return;
 	        }
 	    });
@@ -76,7 +80,11 @@ $("#profileForm").submit(function(e) {
 	// input 데이터 체크 및 팝업창 띄워주고 포커스
 	if(validateMessage != null) {
 		validateFocus.focus();
-		alert(validateMessage);
+		Swal.fire({
+            text: validateMessage,
+            confirmButtonText: '확인',
+            allowOutsideClick: true
+        });
 		return false;
 	}
 	
@@ -90,14 +98,27 @@ $("#profileForm").submit(function(e) {
           success: function(result)
           {
               if(result.success) { // show response from the php script.
-            	  alert("기본정보가 변경 되었습니다.")
+            	  Swal.fire({
+                      text: "기본정보가 변경 되었습니다",
+                      confirmButtonText: '확인',
+                      allowOutsideClick: true
+                  });
             	  location.href = contextPath + "/mypage";
               }else {
-            	  alert(result.message);
+            	  Swal.fire({
+	                    text: result.message,
+	                    confirmButtonText: '확인',
+	                    allowOutsideClick: true
+	                });
+
               }
           },
    		  fail: function(result) {
-   			  alert("기본정보 수정에 실패 했습니다.");
+   			Swal.fire({
+                text: "기본정보 수정에 실패 했습니다",
+                confirmButtonText: '확인',
+                allowOutsideClick: true
+            });
    		  }
     });
 

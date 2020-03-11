@@ -25,6 +25,38 @@ $(document).ready(function(){
 		}
 	}
 	
+	// 2020.03.05 모바일 터치 클릭 이벤트 - 음영효과
+    $("button").bind("touchstart", function(e){
+        $(this).css("filter", "brightness(80%)");
+    });
+    $("button").bind("touchend", function(e){
+        $(this).css("filter", "none");
+    });
+    $("a").bind("touchstart", function(e){
+        $(this).css("filter", "brightness(80%)");
+    });
+    $("a").bind("touchend", function(e){
+        $(this).css("filter", "none");
+    });
+    $(".shop-link-login").bind("touchstart", function(e){
+        $(this).css("filter", "brightness(80%)");
+    });
+    $(".shop-link-login").bind("touchend", function(e){
+        $(this).css("filter", "none");
+    });
+    $(".attendance-img").bind("touchstart", function(e){
+        $(this).css("filter", "brightness(80%)");
+    });
+    $(".attendance-img").bind("touchend", function(e){
+        $(this).css("filter", "none");
+    });
+    $(".dsyouth-link").bind("touchstart", function(e){
+        $(this).css("filter", "brightness(80%)");
+    });
+    $(".dsyouth-link").bind("touchend", function(e){
+        $(this).css("filter", "none");
+    });
+    
 });
 
 
@@ -127,4 +159,13 @@ function excelDown() {
 	location.href = contextPath + "/attendance/excelDownload?year=" + year + "&season=" + season;
 	
 	$("#mask, .window").hide();
+}
+
+// 공통 팝업
+function openPopup(str) {
+	Swal.fire({
+        text: str,
+        confirmButtonText: '확인',
+        allowOutsideClick: true
+    });
 }

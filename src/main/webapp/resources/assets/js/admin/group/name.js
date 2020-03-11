@@ -19,7 +19,11 @@ $("#registGroupForm").submit(function(e) {
 	// input 데이터 체크 및 팝업창 띄워주고 포커스
 	if(validateMessage != null) {
 		validateFocus.focus();
-		alert(validateMessage);
+		Swal.fire({
+            text: validateMessage,
+            confirmButtonText: '확인',
+            allowOutsideClick: true
+        });
 		return false;
 	} 
 	
@@ -33,14 +37,28 @@ $("#registGroupForm").submit(function(e) {
           success: function(result)
           {
               if(result.success) { // show response from the php script.
-            	  alert("순명이 등록 되었습니다.")
-            	  location.reload();
+            	  Swal.fire({
+            		  text: "순명이 등록 되었습니다",
+            		  confirmButtonText: '확인',
+            		  allowOutsideClick: true
+            	  }).then(function() {
+            		  location.reload();
+            	  });
               }else {
-            	  alert(result.message);
+            	  Swal.fire({
+            		  text: result.message,
+            		  confirmButtonText: '확인',
+            		  allowOutsideClick: true
+            	  });	
+
               }
           },
    		  fail: function(result) {
-   			  alert("순명 등록에 실패 했습니다.");
+   			 Swal.fire({
+	       		  text: "순명 등록에 실패 했습니다",
+	       		  confirmButtonText: '확인',
+	       		  allowOutsideClick: true
+	       	  });
    		  }
     });
 
@@ -71,11 +89,17 @@ function modify(id) {
     }else {
     	
     	// 순명 수정 프로세스
-    	var conf = confirm('정말 수정 하시겠습니까?');
-
-    	if(conf){
-    		
-    		var url = contextPath + "/rest/group/modify"
+    	Swal.fire({
+            title: '순명 수정',
+            html: '정말 수정 하시겠습니까?',
+            showCancelButton: true,
+            cancelButtonText: '취소',
+            confirmButtonText: '확인',
+            allowOutsideClick: true,
+            reverseButtons: true
+        }).then(function (isConfirm) {
+        	
+        	var url = contextPath + "/rest/group/modify"
     		
     		$.ajax({
     	          type: "POST",
@@ -91,15 +115,24 @@ function modify(id) {
     	              if(result.success) { // show response from the php script.
     	            	  location.reload();
     	              }else {
-    	            	  alert(result.message);
+    	            	  Swal.fire({
+    		                    text: result.message,
+    		                    confirmButtonText: '확인',
+    		                    allowOutsideClick: true
+    		                });
+
     	              }
     	          },
     	   		  fail: function(result) {
-    	   			  alert("순명 수정에 실패했습니다.");
+    	   			Swal.fire({
+	                    text: "순명 수정에 실패했습니다",
+	                    confirmButtonText: '확인',
+	                    allowOutsideClick: true
+	                });
     	   		  }
     	    });
-    	}
-    	
+        });
+
     }
     
     
@@ -123,11 +156,17 @@ function remove(id) {
     }else {
     	
     	// 순명 삭제 프로세스
-    	var conf = confirm('정말 삭제 하시겠습니까?\n' + $targetInputHidden.val() + ' 그룹의 데이터가 초기화 됩니다.');
-
-    	if(conf){
-
-    		var url = contextPath + "/rest/group/remove"
+    	Swal.fire({
+            title: '순명 삭제',
+            html: '정말 삭제 하시겠습니까?<br>' + $targetInputHidden.val() + ' 그룹의 데이터가 초기화 됩니다.',
+            showCancelButton: true,
+            cancelButtonText: '취소',
+            confirmButtonText: '확인',
+            allowOutsideClick: true,
+            reverseButtons: true
+        }).then(function (isConfirm) {
+        	
+        	var url = contextPath + "/rest/group/remove"
     		
     		$.ajax({
     	          type: "POST",
@@ -140,15 +179,24 @@ function remove(id) {
     	              if(result.success) { // show response from the php script.
     	            	  location.reload();
     	              }else {
-    	            	  alert(result.message);
+    	            	  Swal.fire({
+    		                    text: result.message,
+    		                    confirmButtonText: '확인',
+    		                    allowOutsideClick: true
+    		                });
+
     	              }
     	          },
     	   		  fail: function(result) {
-    	   			  alert("순명 삭제에 실패했습니다.");
+    	   			Swal.fire({
+	                    text: "순명 삭제에 실패했습니다",
+	                    confirmButtonText: '확인',
+	                    allowOutsideClick: true
+	                });
     	   		  }
     	    });
-    	}
-    	
+        });
+
     }
 
 }

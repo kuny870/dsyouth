@@ -16,7 +16,11 @@ function attGroup() {
     }
 
     if(memberArr == "") {
-    	alert("적용할 대상을 선택해 주세요.");
+    	Swal.fire({
+            text: "적용할 대상을 선택해 주세요",
+            confirmButtonText: '확인',
+            allowOutsideClick: true
+        });
     	return false;
     }
 
@@ -34,14 +38,28 @@ function attGroup() {
         success: function(result)
         {
             if(result.success) { // show response from the php script.
-            	alert("적용 되었습니다.")
-          	  	location.reload();
+            	Swal.fire({
+                    text: "적용 되었습니다",
+                    confirmButtonText: '확인',
+                    allowOutsideClick: true
+                }).then(function() {
+                	location.reload();
+                });
             }else {
-          	  	alert(result.message);
+            	Swal.fire({
+                    text: result.message,
+                    confirmButtonText: '확인',
+                    allowOutsideClick: true
+                });
+
             }
         },
  		  fail: function(result) {
- 			  alert("순명 적용에 실패 했습니다.");
+ 			 Swal.fire({
+ 	            text: "순명 적용에 실패 했습니다",
+ 	            confirmButtonText: '확인',
+ 	            allowOutsideClick: true
+ 	        });
  		  }
      });
 }
@@ -58,9 +76,18 @@ function attGroupGrade(mId, name, grade) {
 		grade = "순원"
 	}
 	
-	var conf = confirm(name+ " 을(를) " + grade + "으로 적용 하시겠습니까?");
-	if(conf){
-		var url = contextPath + "/rest/attGroupGrade/edit"
+	Swal.fire({
+        title: grade + ' 적용',
+        html: name+ " 을(를) " + grade + "으로 적용 하시겠습니까?",
+        showCancelButton: true,
+        cancelButtonText: '취소',
+        confirmButtonText: '확인',
+        allowOutsideClick: true,
+        reverseButtons: true
+    }).then(function (isConfirm) {
+    	
+    	var url = contextPath + "/rest/attGroupGrade/edit"
+    	
 	    $.ajax({
 	        type: "POST",
 	        url: url,
@@ -74,17 +101,31 @@ function attGroupGrade(mId, name, grade) {
 	        success: function(result)
 	        {
 	            if(result.success) { // show response from the php script.
-	            	alert("적용 되었습니다.")
-	          	  	location.reload();
+	            	Swal.fire({
+	                    text: "적용 되었습니다",
+	                    confirmButtonText: '확인',
+	                    allowOutsideClick: true
+	                }).then(function() {
+	                	location.reload();
+	                });
 	            }else {
-	          	  	alert(result.message);
+	            	Swal.fire({
+	                    text: result.message,
+	                    confirmButtonText: '확인',
+	                    allowOutsideClick: true
+	                });
 	            }
 	        },
 	 		  fail: function(result) {
-	 			  alert(groupName + " 적용에 실패 했습니다.");
+	 			 Swal.fire({
+	 	            text: groupName + " 적용에 실패 했습니다",
+	 	            confirmButtonText: '확인',
+	 	            allowOutsideClick: true
+	 	        });
 	 		  }
 	     });
-	}
+    	
+    });
 		
 }
 

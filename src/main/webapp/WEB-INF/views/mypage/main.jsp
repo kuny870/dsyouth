@@ -41,7 +41,7 @@
 	                    <div class="mypage-row">
 	                    	<c:choose>
                        			<c:when test="${departList.size() == 0 || teamList.size() == 0}">
-                       				<a href="#" onclick="alert('부서와 팀을 먼저 셋팅해주세요!')">출석부</a>
+                       				<a href="#" onclick="openPopup('부서와 팀을 먼저 셋팅해주세요!')">출석부</a>
                        			</c:when>
                        			<c:otherwise>
                        				<a href="${contextPath }/attendance/list?teamId=${login.teamId}">출석부</a>
@@ -51,7 +51,7 @@
 	                    <div class="mypage-row">
 	                    	<c:choose>
                        			<c:when test="${departList.size() == 0 || teamList.size() == 0}">
-                       				<a href="#" onclick="alert('부서와 팀을 먼저 셋팅해주세요!')">팀원 관리</a>
+                       				<a href="#" onclick="openPopup('부서와 팀을 먼저 셋팅해주세요!')">팀원 관리</a>
                        			</c:when>
                        			<c:otherwise>
                        				<a href="${contextPath }/member/list?teamId=${login.teamId}">팀원 관리</a>
@@ -73,7 +73,7 @@
 	                <div class="mypage-rows">
 	                	<div class="mypage-row">
                				<a href="${contextPath }/retreat/list">가족 편성표</a>
-               				<a href="#" onclick="alert('준비중 입니다.')">가족 편성표</a>
+               				<a href="#" onclick="openPopup('준비중 입니다.')">가족 편성표</a>
 	                    </div>
 	                	<c:if test="${login.loginId == 'admin' 
 	                					|| login.name == '문시은'

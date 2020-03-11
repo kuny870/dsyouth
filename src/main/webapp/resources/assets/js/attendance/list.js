@@ -77,14 +77,27 @@ function attendanceRegist() {
         success: function(result)
         {
             if(result.success) { // show response from the php script.
-            	alert("적용 되었습니다.")
-          	  	location.reload();
+            	Swal.fire({
+                    text: '적용 되었습니다',
+                    confirmButtonText: '확인',
+                    allowOutsideClick: true
+                }).then(function() {
+                	location.reload();
+                });
             }else {
-          	  	alert(result.message);
+            	Swal.fire({
+                    text: result.message,
+                    confirmButtonText: '확인',
+                    allowOutsideClick: true
+                });
             }
         },
  		  fail: function(result) {
- 			  alert("출석 적용에 실패 했습니다.");
+ 			 Swal.fire({
+                 text: '출석 적용에 실패 했습니다',
+                 confirmButtonText: '확인',
+                 allowOutsideClick: true
+             });
  		  }
      });
 }

@@ -185,9 +185,11 @@
     height: 25%;
     margin-left: 4%;
     border-radius: 3px;
+    text-align: center;
 }
 
 .basic-btn {
+	cursor: pointer;
 	border-radius: 5px; 
 	background-color: #284AF3; 
 	color:#fff;
@@ -806,7 +808,6 @@
     position: relative;
     height: 13.333333333333334vw;
     background-color: #f8f9fa;   
-    position: relative;
 }
 .header-product .shop-title {
     font-size: 8.71111111111111vw;
@@ -828,15 +829,11 @@
 }
 .header-product .shop-link-login{
     position: absolute;
-    top: 30%;
-    font-size: 3.2888888888vw;
-    line-height: 3.2888888888vw;
-    font-weight: 700;
-    margin: -1.6444444444vw 0 0 0;
-    cursor: pointer;
-    font-size: 16px;
-    height:80%;
+    top: 0px;
+    line-height: 0px;
+    margin: 0px;
     width:15%;
+    height:114%;
 }
 
 .dsyouth-link {
@@ -846,10 +843,9 @@
 }
 
 .back-img {
-	width: 65%; 
-	height: 55%;
-	margin-top: 18%;
-	margin-left: 15%;
+	width: 20%;
+	margin-top: 37%;
+	margin-left: 38%;
 }
 
 .phone-img {
@@ -2647,4 +2643,37 @@
  	 .notice-content-3 {
 	 	font-size: 18px !important;
 	 }
+}
+
+/* sweetalert2 */
+.swal2-popup {
+    border-radius: 10px !important;
+    max-width: 85% !important;
+}
+.swal2-title {
+    margin-top: 40px !important;
+    font-size: 17px !important;
+    color: #000 !important;
+    font-weight: bold !important;
+}
+.swal2-actions {
+    margin: 0 !important;
+}
+.swal2-styled.swal2-confirm {
+    border-radius: 10px !important;
+    /* background-color: #ff4e00 !important; */
+    width: 100px !important;
+    height: 40px !important;
+    font-size: 12px !important;
+}
+.swal2-styled.swal2-cancel {
+    border-radius: 10px !important;
+    width: 100px !important;
+    height: 40px !important;
+}
+.swal2-content {
+    padding: 10px 0 20px 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    font-size: 18px !important;
 }

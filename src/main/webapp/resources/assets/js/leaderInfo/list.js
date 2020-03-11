@@ -31,7 +31,11 @@ $("#registLeaderInfoForm").submit(function(e) {
 	// input 데이터 체크 및 팝업창 띄워주고 포커스
 	if(validateMessage != null) {
 		validateFocus.focus();
-		alert(validateMessage);
+		Swal.fire({
+            text: validateMessage,
+            confirmButtonText: '확인',
+            allowOutsideClick: true
+        });
 		return false;
 	}
 	
@@ -51,12 +55,21 @@ $("#registLeaderInfoForm").submit(function(e) {
         success: function(result)
         {
             if(result == "SUCCESS") { // show response from the php script.
-          	  alert("배포자료가 등록 되었습니다.")
-          	  location.reload();
+            	Swal.fire({
+                    text: "배포자료가 등록 되었습니다",
+                    confirmButtonText: '확인',
+                    allowOutsideClick: true
+                }).then(function() {
+                	location.reload();
+                });
             }
         },
  		  fail: function(result) {
- 			  alert("배포자료 등록에 실패 했습니다.");
+ 			 Swal.fire({
+ 	            text: "배포자료 등록에 실패 했습니다",
+ 	            confirmButtonText: '확인',
+ 	            allowOutsideClick: true
+ 	        });
  		  }
 	});
 
@@ -67,11 +80,17 @@ $("#registLeaderInfoForm").submit(function(e) {
 
 function remove(val) {
 	
-	var conf = confirm('정말 삭제하시겠습니까?');
-
-	if(conf){
-
-		var url = contextPath + "/rest/leaderInfo/remove"
+	Swal.fire({
+        title: '배포자료 삭제',
+        html: '정말 삭제하시겠습니까?',
+        showCancelButton: true,
+        cancelButtonText: '취소',
+        confirmButtonText: '확인',
+        allowOutsideClick: true,
+        reverseButtons: true
+    }).then(function (isConfirm) {
+    	
+    	var url = contextPath + "/rest/leaderInfo/remove"
 		
 		$.ajax({
 	          type: "POST",
@@ -84,15 +103,25 @@ function remove(val) {
 	              if(result.success) { // show response from the php script.
 	            	  location.reload();
 	              }else {
-	            	  alert(result.message);
+	            	  Swal.fire({
+		                    text: result.message,
+		                    confirmButtonText: '확인',
+		                    allowOutsideClick: true
+		                });
+
 	              }
 	          },
 	   		  fail: function(result) {
-	   			  alert("리더배포자료 삭제에 실패했습니다.");
+	   			Swal.fire({
+                    text: "리더배포자료 삭제에 실패했습니다",
+                    confirmButtonText: '확인',
+                    allowOutsideClick: true
+                });
 	   		  }
 	    });
-	}
 
+    });
+		
 }
 
 
@@ -112,7 +141,11 @@ function readFileImage(file, callback) {
             callback(w,h,t,n,s);
         };
         image.onerror= function() {
-            alert('Invalid file type: '+ file.type);
+        	Swal.fire({
+                text: 'Invalid file type: '+ file.type,
+                confirmButtonText: '확인',
+                allowOutsideClick: true
+            });
         };      
     };
     
@@ -146,13 +179,21 @@ $('input[type=file]').on('change', function () {
     	return;
     } else {
         if($.inArray(ext, ['gif','png','jpg','jpeg']) == -1) {
-            alert('png,jpg,jpeg 파일만 업로드 할수 있습니다.');
+            Swal.fire({
+	                    text: 'png,jpg,jpeg 파일만 업로드 할수 있습니다',
+	                    confirmButtonText: '확인',
+	                    allowOutsideClick: true
+	                });
             return;
         }            
     };
     
     if ( fileSize > maxSize ) {
-        alert("첨부파일 사이즈는 10MB 이내로 등록 가능합니다.");
+         Swal.fire({
+	                    text: "첨부파일 사이즈는 10MB 이내로 등록 가능합니다",
+	                    confirmButtonText: '확인',
+	                    allowOutsideClick: true
+	                });
         return;
     };
     
@@ -169,7 +210,11 @@ $('input[type=file]').on('change', function () {
                     if ( width == w && height == h ) {
                         upload(input);
                     } else {
-                        alert(width+'x'+height+'로 업로드 해주세요.');
+                        Swal.fire({
+	                    text: width+'x'+height+'로 업로드 해주세요',
+	                    confirmButtonText: '확인',
+	                    allowOutsideClick: true
+	                });
                     }
                 });
             };
@@ -208,14 +253,28 @@ $("#registLeaderInfoForm").submit(function(e) {
         success: function(result)
         {
             if(result.success) { // show response from the php script.
-          	  alert("멤버가 등록 되었습니다.")
-          	  location.reload();
+          	   Swal.fire({
+	                    text: "멤버가 등록 되었습니다",
+	                    confirmButtonText: '확인',
+	                    allowOutsideClick: true
+	            }).then(function() {
+            		location.reload();
+        		});
             }else {
-          	  alert(result.message);
+          	  Swal.fire({
+	                    text: result.message,
+	                    confirmButtonText: '확인',
+	                    allowOutsideClick: true
+	                });
+
             }
         },
  		  fail: function(result) {
- 			  alert("멤버 등록에 실패했습니다.");
+ 			  Swal.fire({
+	                    text: "멤버 등록에 실패했습니다",
+	                    confirmButtonText: '확인',
+	                    allowOutsideClick: true
+	                });
  		  }
     });
 
@@ -229,14 +288,20 @@ $("#registLeaderInfoForm").submit(function(e) {
 //        success: function(result) {
 //        	if(result.success) { // show response from the php script.
 //        		location.reload();
-//        		alert(2);
 //        	}else {
-//        		alert(result.message);
-//        		alert(3);
+//        		Swal.fire({
+//	                    text: result.message,
+//	                    confirmButtonText: '확인',
+//	                    allowOutsideClick: true
+//	                });
 //        	}
 //        },
 //		fail: function(result) {
-//			alert("리더배포자료 등록에 실패했습니다.");
+//			Swal.fire({
+//	                    text: "리더배포자료 등록에 실패했습니다",
+//	                    confirmButtonText: '확인',
+//	                    allowOutsideClick: true
+//	                });
 //		}
 //    });
 
@@ -272,59 +337,19 @@ $("#registLeaderInfoForm").submit(function(e) {
 //                if(result.success) { // show response from the php script.
 //              	  location.reload();
 //                }else {
-//                    alert(result.message);
+//                    Swal.fire({
+//							text: result.message,
+//							confirmButtonText: '확인',
+//							allowOutsideClick: true
+//						});
 //                }
 //            },
 //            fail: function(result) {
-//                alert("리더배포자료 등록에 실패했습니다.");
+//                Swal.fire({
+//						text: "리더배포자료 등록에 실패했습니다",
+//						confirmButtonText: '확인',
+//						allowOutsideClick: true
+//					});
 //            }
 //        });
 //    };
-
-    
-	/////////////////////
-//	
-//	
-//	var $img = $('#img');
-//
-//    var validateMessage = null;
-//    var validateFocus = null;
-//    
-//    // input 데이터 체크 및 팝업text 입력, 포커스 입력
-//    if ($img.val() == "") {
-//         validateMessage = '파일을 선택해 주세요.';
-//         validateFocus = $img;
-//    }
-//    
-//    // input 데이터 체크 및 팝업창 띄워주고 포커스
-//    if(validateMessage != null) {
-//         validateFocus.focus();
-//         alert(validateMessage);
-//         return false;
-//    }
-//    
-//    var form = $(this);
-//    var url = contextPath + "/rest/leaderInfo"
-//    
-//    $.ajax({
-//          type: "POST",
-//          contentType: false,
-//          processData: false,
-//          url: url,
-//          data: form.serialize(),
-//          success: function(result)
-//          {
-//              if(result.success) { // show response from the php script.
-//            	  location.reload();
-//              }else {
-//                  alert(result.message);
-//              }
-//          },
-//          fail: function(result) {
-//              alert("리더배포자료 등록에 실패했습니다.");
-//          }
-//    });
-//    e.preventDefault(); // avoid to execute the actual submit of the form.
-//  
-//});
-
