@@ -97,40 +97,45 @@ function modify(id) {
             confirmButtonText: '확인',
             allowOutsideClick: true,
             reverseButtons: true
-        }).then(function (isConfirm) {
-        	
-        	var url = contextPath + "/rest/group/modify"
-    		
-    		$.ajax({
-    	          type: "POST",
-    	          url: url,
-    	          data: {
-    	        	  id : id,
-    	        	  gName : gNameInput.value,
-    	        	  year : year,
-    	        	  season : season
-    	          }, // serializes the form’s elements.
-    	          success: function(result)
-    	          {
-    	              if(result.success) { // show response from the php script.
-    	            	  location.reload();
-    	              }else {
-    	            	  Swal.fire({
-    		                    text: result.message,
-    		                    confirmButtonText: '확인',
-    		                    allowOutsideClick: true
-    		                });
+        }).then(function (result) {
+        		
+        	if(result.value){
+        		
+        		var url = contextPath + "/rest/group/modify"
+        		
+        		$.ajax({
+        	          type: "POST",
+        	          url: url,
+        	          data: {
+        	        	  id : id,
+        	        	  gName : gNameInput.value,
+        	        	  year : year,
+        	        	  season : season
+        	          }, // serializes the form’s elements.
+        	          success: function(result)
+        	          {
+        	              if(result.success) { // show response from the php script.
+        	            	  location.reload();
+        	              }else {
+        	            	  Swal.fire({
+        		                    text: result.message,
+        		                    confirmButtonText: '확인',
+        		                    allowOutsideClick: true
+        		                });
 
-    	              }
-    	          },
-    	   		  fail: function(result) {
-    	   			Swal.fire({
-	                    text: "순명 수정에 실패했습니다",
-	                    confirmButtonText: '확인',
-	                    allowOutsideClick: true
-	                });
-    	   		  }
-    	    });
+        	              }
+        	          },
+        	   		  fail: function(result) {
+        	   			Swal.fire({
+    	                    text: "순명 수정에 실패했습니다",
+    	                    confirmButtonText: '확인',
+    	                    allowOutsideClick: true
+    	                });
+        	   		  }
+        	    });
+        		
+        	}
+        	
         });
 
     }
@@ -164,37 +169,42 @@ function remove(id) {
             confirmButtonText: '확인',
             allowOutsideClick: true,
             reverseButtons: true
-        }).then(function (isConfirm) {
+        }).then(function (result) {
         	
-        	var url = contextPath + "/rest/group/remove"
-    		
-    		$.ajax({
-    	          type: "POST",
-    	          url: url,
-    	          data: {
-    	        	  id : id
-    	          }, // serializes the form’s elements.
-    	          success: function(result)
-    	          {
-    	              if(result.success) { // show response from the php script.
-    	            	  location.reload();
-    	              }else {
-    	            	  Swal.fire({
-    		                    text: result.message,
-    		                    confirmButtonText: '확인',
-    		                    allowOutsideClick: true
-    		                });
+        	if(result.value){
+        		
+        		var url = contextPath + "/rest/group/remove"
+        		
+        		$.ajax({
+        	          type: "POST",
+        	          url: url,
+        	          data: {
+        	        	  id : id
+        	          }, // serializes the form’s elements.
+        	          success: function(result)
+        	          {
+        	              if(result.success) { // show response from the php script.
+        	            	  location.reload();
+        	              }else {
+        	            	  Swal.fire({
+        		                    text: result.message,
+        		                    confirmButtonText: '확인',
+        		                    allowOutsideClick: true
+        		                });
 
-    	              }
-    	          },
-    	   		  fail: function(result) {
-    	   			Swal.fire({
-	                    text: "순명 삭제에 실패했습니다",
-	                    confirmButtonText: '확인',
-	                    allowOutsideClick: true
-	                });
-    	   		  }
-    	    });
+        	              }
+        	          },
+        	   		  fail: function(result) {
+        	   			Swal.fire({
+    	                    text: "순명 삭제에 실패했습니다",
+    	                    confirmButtonText: '확인',
+    	                    allowOutsideClick: true
+    	                });
+        	   		  }
+        	    });
+        		
+        	}
+        	
         });
 
     }

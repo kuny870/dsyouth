@@ -84,46 +84,50 @@ function attGroupGrade(mId, name, grade) {
         confirmButtonText: '확인',
         allowOutsideClick: true,
         reverseButtons: true
-    }).then(function (isConfirm) {
+    }).then(function (result) {
     	
-    	var url = contextPath + "/rest/attGroupGrade/edit"
-    	
-	    $.ajax({
-	        type: "POST",
-	        url: url,
-	        traditional : true,
-	        data: {
-	        	'memberId' : mId,
-	        	'groupGrade' : grade,
-	        	'year' : year,
-	        	'season' : season
-	        }, // serializes the form’s elements.
-	        success: function(result)
-	        {
-	            if(result.success) { // show response from the php script.
-	            	Swal.fire({
-	                    text: "적용 되었습니다",
-	                    confirmButtonText: '확인',
-	                    allowOutsideClick: true
-	                }).then(function() {
-	                	location.reload();
-	                });
-	            }else {
-	            	Swal.fire({
-	                    text: result.message,
-	                    confirmButtonText: '확인',
-	                    allowOutsideClick: true
-	                });
-	            }
-	        },
-	 		  fail: function(result) {
-	 			 Swal.fire({
-	 	            text: groupName + " 적용에 실패 했습니다",
-	 	            confirmButtonText: '확인',
-	 	            allowOutsideClick: true
-	 	        });
-	 		  }
-	     });
+    	if(result.value){
+    		
+    		var url = contextPath + "/rest/attGroupGrade/edit"
+        	
+    	    $.ajax({
+    	        type: "POST",
+    	        url: url,
+    	        traditional : true,
+    	        data: {
+    	        	'memberId' : mId,
+    	        	'groupGrade' : grade,
+    	        	'year' : year,
+    	        	'season' : season
+    	        }, // serializes the form’s elements.
+    	        success: function(result)
+    	        {
+    	            if(result.success) { // show response from the php script.
+    	            	Swal.fire({
+    	                    text: "적용 되었습니다",
+    	                    confirmButtonText: '확인',
+    	                    allowOutsideClick: true
+    	                }).then(function() {
+    	                	location.reload();
+    	                });
+    	            }else {
+    	            	Swal.fire({
+    	                    text: result.message,
+    	                    confirmButtonText: '확인',
+    	                    allowOutsideClick: true
+    	                });
+    	            }
+    	        },
+    	 		  fail: function(result) {
+    	 			 Swal.fire({
+    	 	            text: groupName + " 적용에 실패 했습니다",
+    	 	            confirmButtonText: '확인',
+    	 	            allowOutsideClick: true
+    	 	        });
+    	 		  }
+    	     });
+    		
+    	}
     	
     });
 		

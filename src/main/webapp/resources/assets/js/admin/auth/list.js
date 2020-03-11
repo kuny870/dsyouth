@@ -12,8 +12,8 @@ function remove(id, name) {
             confirmButtonText: '확인',
             allowOutsideClick: true,
             reverseButtons: true
-        }).then(function (isConfirm) {
-            if(isConfirm.value) {
+        }).then(function (result) {
+            if(result.value) {
             	
             	var url = contextPath + "/rest/authExec/remove"
     			
@@ -60,8 +60,8 @@ function remove(id, name) {
             confirmButtonText: '확인',
             allowOutsideClick: true,
             reverseButtons: true
-        }).then(function (isConfirm) {
-            if(isConfirm.value) {
+        }).then(function (result) {
+            if(result.value) {
             	
             	var url = contextPath + "/rest/auth/remove"
     			

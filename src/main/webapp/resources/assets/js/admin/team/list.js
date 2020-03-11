@@ -79,37 +79,42 @@ function remove(id) {
         confirmButtonText: '확인',
         allowOutsideClick: true,
         reverseButtons: true
-    }).then(function (isConfirm) {
+    }).then(function (result) {
     	
-    	var url = contextPath + "/rest/team/remove"
-		
-		$.ajax({
-	          type: "POST",
-	          url: url,
-	          data: {
-	        	  id : id
-	          }, // serializes the form’s elements.
-	          success: function(result)
-	          {
-	              if(result.success) { // show response from the php script.
-	            	  location.reload();
-	              }else {
-	            	  Swal.fire({
-		                    text: result.message,
-		                    confirmButtonText: '확인',
-		                    allowOutsideClick: true
-		                });
+    	if(result.value){
+    		
+    		var url = contextPath + "/rest/team/remove"
+    		
+    		$.ajax({
+    	          type: "POST",
+    	          url: url,
+    	          data: {
+    	        	  id : id
+    	          }, // serializes the form’s elements.
+    	          success: function(result)
+    	          {
+    	              if(result.success) { // show response from the php script.
+    	            	  location.reload();
+    	              }else {
+    	            	  Swal.fire({
+    		                    text: result.message,
+    		                    confirmButtonText: '확인',
+    		                    allowOutsideClick: true
+    		                });
 
-	              }
-	          },
-	   		  fail: function(result) {
-	   			Swal.fire({
-                    text: "팀 삭제에 실패 했습니다",
-                    confirmButtonText: '확인',
-                    allowOutsideClick: true
-                });
-	   		  }
-	    });
+    	              }
+    	          },
+    	   		  fail: function(result) {
+    	   			Swal.fire({
+                        text: "팀 삭제에 실패 했습니다",
+                        confirmButtonText: '확인',
+                        allowOutsideClick: true
+                    });
+    	   		  }
+    	    });
+    		
+    	}
+    	
 
     });
 
