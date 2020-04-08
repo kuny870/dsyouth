@@ -8,7 +8,7 @@ $("#registSamePeriodForm").submit(function(e) {
 
 	// input 데이터 체크 및 팝업text 입력, 포커스 입력
 	if ($birthYear.val() == "") {
-		validateMessage = '탄생년을 입력해 주세요.';
+		validateMessage = '탄생년을 입력해 주세요';
 		validateFocus = $birthYear;
 	} else if (year - $birthYear.val() < 19 ) {
 		validateMessage = '올해 청년부는\n' + (year - 19) + '년생부터 입니다.';

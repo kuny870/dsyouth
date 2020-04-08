@@ -63,101 +63,114 @@ function getNewMemberDetail(val){
      }
 }
 
-
-// 멤버 수정
-$("#memberModifyForm").submit(function(e) {
-	
-	var sTeamId = $('#sTeamId').val();
-	var sGroupId = $('#sGroupId').val();
-	var sNameKW = $('#sNameKW').val();
-	var pageNo = $('#pageNo').val();
+//멤버 수정
+function memberModify() {
 	
 	Swal.fire({
-        title: '팀원 수정',
-        html: "수정 하시겠습니까?",
-        showCancelButton: true,
-        cancelButtonText: '취소',
-        confirmButtonText: '확인',
-        allowOutsideClick: true,
-        reverseButtons: true
-    }).then(function (result) {
-    	
-    	if(result.value){
-    		
-    		var dateOfBirthRegex=/^[0-9]{6}$/;
-    		var htelRegex=/^[0-9]{10,11}$/;
-    		
-    		var $name = $('#name');
-    		var $dateOfBirth = $('#dateOfBirth');
-    		var $htel = $('#htel');
+	    title: '팀원 정보 수정',
+	    html: "수정 하시겠습니까?",
+	    showCancelButton: true,
+	    cancelButtonText: '취소',
+	    confirmButtonText: '확인',
+	    allowOutsideClick: true,
+	    reverseButtons: true
+	}).then(function (result) {
+		
+		if(result.value){
+			
+			var sTeamId = $('#sTeamId').val();
+			var sGroupId = $('#sGroupId').val();
+			var sNameKW = $('#sNameKW').val();
+			var pageNo = $('#pageNo').val();
+			
+			var dateOfBirthRegex=/^[0-9]{6}$/;
+			var htelRegex=/^[0-9]{10,11}$/;
+			
+			var $name = $('#name');
+			var $dateOfBirth = $('#dateOfBirth');
+			var $htel = $('#htel');
 
-    		var validateMessage = null;
-    		var validateFocus = null;
-    		
-    		// input 데이터 체크 및 팝업text 입력, 포커스 입력
-    		if ($name.val() == "") {
-    			validateMessage = '이름을 입력해 주세요.';
-    			validateFocus = $name;
-    		} else if ($dateOfBirth.val() != "" && dateOfBirthRegex.test($dateOfBirth.val())===false) {
-    			validateMessage = '생년월일을 다시 확인해 주세요.';
-    			validateFocus = $dateOfBirth;
-    		} else if ($htel.val() != "" && htelRegex.test($htel.val())===false) {
-    			validateMessage = '휴대폰 번호를 다시 확인해 주세요.';
-    			validateFocus = $htel;
-    		}
+			var validateMessage = null;
+			var validateFocus = null;
+			
+			// input 데이터 체크 및 팝업text 입력, 포커스 입력
+			if ($name.val() == "") {
+				validateMessage = '이름을 입력해 주세요';
+				validateFocus = $name;
+			} else if ($dateOfBirth.val() != "" && dateOfBirthRegex.test($dateOfBirth.val())===false) {
+				validateMessage = '생년월일을 다시 확인해 주세요';
+				validateFocus = $dateOfBirth;
+			} else if ($htel.val() != "" && htelRegex.test($htel.val())===false) {
+				validateMessage = '휴대폰 번호를 다시 확인해 주세요';
+				validateFocus = $htel;
+			}
 
-    		// input 데이터 체크 및 팝업창 띄워주고 포커스
-    		if(validateMessage != null) {
-    			validateFocus.focus();
-    			Swal.fire({
-    	            text: validateMessage,
-    	            confirmButtonText: '확인',
-    	            allowOutsideClick: true
-    	        });
-    			return false;
-    		}
-    		
-    		var form = $(this);
-    		var url = contextPath + "/rest/member/edit"
-    	   
-    		$.ajax({
-    	          type: "POST",
-    	          url: url,
-    	          data: form.serialize(), // serializes the form’s elements.
-    	          success: function(result)
-    	          {
-    	              if(result.success) { // show response from the php script.
-    	            	  Swal.fire({
-    	                      text: $name.val() + " 정보가 수정 되었습니다",
-    	                      confirmButtonText: '확인',
-    	                      allowOutsideClick: true
-    	                  }).then(function() {
-    	                	  location.href = contextPath + "/member/list?teamId=" + sTeamId + "&groupId=" + sGroupId + "&nameKW=" + sNameKW + "&pageNo=" + pageNo;
-    	                  });
-    	              }else {
-    	            	  Swal.fire({
-    	            		    text: result.message,
-    	            		    confirmButtonText: '확인',
-    	            		    allowOutsideClick: true
-    	            		});
-    	              }
-    	          },
-    	   		  fail: function(result) {
-    	   			Swal.fire({
-    	   			    text: $name.val() + " 정보 수정에 실패 했습니다",
-    	   			    confirmButtonText: '확인',
-    	   			    allowOutsideClick: true
-    	   			});
-    	   		  }
-    	    });
+			// input 데이터 체크 및 팝업창 띄워주고 포커스
+			if(validateMessage != null) {
+				validateFocus.focus();
+				Swal.fire({
+		            text: validateMessage,
+		            confirmButtonText: '확인',
+		            allowOutsideClick: true
+		        });
+				return false;
+			}
+			
+			var url = contextPath + "/rest/member/edit"
 
-    		e.preventDefault(); // avoid to execute the actual submit of the form.
-    		
-    	}
-    	
+			$.ajax({
+		          type: "POST",
+		          url: url,
+		          data: {
+		        	  sTeamId : sTeamId
+		        	  ,sGroupId : sGroupId
+		        	  ,sNameKW :  sNameKW
+		        	  ,pageNo : pageNo
+		              ,id : $('#id').val()
+		              ,memState : $('#memState').val()
+		              ,name : $('#name').val()
+		              ,dateOfBirth : $('#dateOfBirth').val()
+		              ,htel : $('#htel').val()
+		              ,departId : $('.departId').val()
+		              ,teamId : $('.teamId').val()
+		              ,guider : $('#guider').val()
+		              ,memberRegDate : $('#memberRegDate').val()
+		              ,memberGradDate : $('#memberGradDate').val()
+		              ,gender : $('input[name="gender"]:checked').val()
+		          },
+		          success: function(result)
+		          {
+		              if(result.success) { // show response from the php script.
+		            	  Swal.fire({
+		                      text: $name.val() + " 정보가 수정 되었습니다",
+		                      confirmButtonText: '확인',
+		                      allowOutsideClick: true
+		                  }).then(function() {
+		                	  location.href = contextPath + "/member/list?teamId=" + sTeamId + "&groupId=" + sGroupId + "&nameKW=" + sNameKW + "&pageNo=" + pageNo;
+		                  });
+		              }else {
+		            	  Swal.fire({
+		            		    text: result.message,
+		            		    confirmButtonText: '확인',
+		            		    allowOutsideClick: true
+		            		});
+		              }
+		          },
+		   		  fail: function(result) {
+		   			Swal.fire({
+		   			    text: $name.val() + " 정보 수정에 실패 했습니다",
+		   			    confirmButtonText: '확인',
+		   			    allowOutsideClick: true
+		   			});
+		   		  }
+		    });
+			
+			e.preventDefault(); // avoid to execute the actual submit of the form.
+			
+		}
 	});
-   
-});
+	
+}
 
 
 function memberRemove(id) {
@@ -169,7 +182,7 @@ function memberRemove(id) {
 	var $name = $('#name');
 	
 	Swal.fire({
-        title: '팀원 삭제',
+        title: '팀원 정보 삭제',
         html: "정말 삭제 하시겠습니까?",
         showCancelButton: true,
         cancelButtonText: '취소',

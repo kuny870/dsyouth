@@ -8,7 +8,7 @@ $("#registFamilyForm").submit(function(e) {
 
 	// input 데이터 체크 및 팝업text 입력, 포커스 입력
 	if ($famName.val() == "") {
-		validateMessage = '가족명을 입력해 주세요.';
+		validateMessage = '가족명을 입력해 주세요';
 		validateFocus = $famName;
 	}
 

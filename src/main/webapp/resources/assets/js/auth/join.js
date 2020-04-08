@@ -60,37 +60,37 @@ $("#joinForm").submit(function(e) {
 
 	// input 데이터 체크 및 팝업text 입력, 포커스 입력
 	if ($loginId.val() == "") {
-		validateMessage = '아이디를 입력해 주세요.';
+		validateMessage = '아이디를 입력해 주세요';
 		validateFocus = $loginId;
 	} else if (idRegex.test($loginId.val())===false) {
 		validateMessage = '아이디는 소문자 영문으로 시작해야 하며 4-15자리이여야 합니다.';
 		validateFocus = $loginId;
 	} else if ($loginPw.val() == "") {
-		validateMessage = '비밀번호를 입력해 주세요.';
+		validateMessage = '비밀번호를 입력해 주세요';
 		validateFocus = $loginPw;
 	} else if ($loginPw.val().length < 6) {
-		validateMessage = '비밀번호를 6자리 이상 입력해 주세요.';
+		validateMessage = '비밀번호를 6자리 이상 입력해 주세요';
 		validateFocus = $loginPw;
 	} else if ($loginPw.val() != $loginPwConfirm.val()) {
-		validateMessage = '비밀번호가 일치하지 않습니다.';
+		validateMessage = '비밀번호가 일치하지 않습니다';
 		validateFocus = $loginPwConfirm;
 	} else if ($name.val() == "") {
-		validateMessage = '이름을 입력해 주세요.';
+		validateMessage = '이름을 입력해 주세요';
 		validateFocus = $name;
 	} else if ($dateOfBirth.val() != "" && dateOfBirthRegex.test($dateOfBirth.val())===false) {
-		validateMessage = '생년월일을 다시 확인해 주세요.';
+		validateMessage = '생년월일을 다시 확인해 주세요';
 		validateFocus = $dateOfBirth;
 	} else if ($htel.val() != "" && htelRegex.test($htel.val())===false) {
-		validateMessage = '휴대폰 번호를 다시 확인해 주세요.';
+		validateMessage = '휴대폰 번호를 다시 확인해 주세요';
 		validateFocus = $htel;
 	} else if ($departId.val() == null || $departId.val() == "") {
-		validateMessage = '부서를 선택해 주세요.';
+		validateMessage = '부서를 선택해 주세요';
 		validateFocus = $departId;
 	} else if ($teamId.val() == null || $teamId.val() == "") {
-		validateMessage = '팀을 선택해 주세요.';
+		validateMessage = '팀을 선택해 주세요';
 		validateFocus = $teamId;
 	} else if ($gender.val() == null) {
-		validateMessage = '성별을 선택해 주세요.';
+		validateMessage = '성별을 선택해 주세요';
 		validateFocus = $gender;
 	}
 

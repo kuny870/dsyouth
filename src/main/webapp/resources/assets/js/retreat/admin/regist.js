@@ -8,7 +8,7 @@ $("#retreatRegistForm").submit(function(e) {
 
 	// input 데이터 체크 및 팝업text 입력, 포커스 입력
 	if ($retreatName.val() == "") {
-		validateMessage = '수련회명을 입력해 주세요.';
+		validateMessage = '수련회명을 입력해 주세요';
 		validateFocus = $retreatName;
 	}
 

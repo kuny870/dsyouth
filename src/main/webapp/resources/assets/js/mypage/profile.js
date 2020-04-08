@@ -55,25 +55,25 @@ $("#profileForm").submit(function(e) {
 
 	// input 데이터 체크 및 팝업text 입력, 포커스 입력
 	if ($loginId.val() == "") {
-		validateMessage = '아이디를 입력해 주세요.';
+		validateMessage = '아이디를 입력해 주세요';
 		validateFocus = $loginId;
 	} else if ($name.val() == "") {
-		validateMessage = '이름을 입력해 주세요.';
+		validateMessage = '이름을 입력해 주세요';
 		validateFocus = $name;
 	} else if ($dateOfBirth.val() != "" && dateOfBirthRegex.test($dateOfBirth.val())===false) {
-		validateMessage = '생년월일을 다시 확인해 주세요.';
+		validateMessage = '생년월일을 다시 확인해 주세요';
 		validateFocus = $dateOfBirth;
 	} else if ($htel.val() != "" && htelRegex.test($htel.val())===false) {
-		validateMessage = '휴대폰 번호를 다시 확인해 주세요.';
+		validateMessage = '휴대폰 번호를 다시 확인해 주세요';
 		validateFocus = $htel;
 	} else if ($depart.val() == "선택") {
-		validateMessage = '부서를 선택해 주세요.';
+		validateMessage = '부서를 선택해 주세요';
 		validateFocus = $depart;
 	} else if ($team.val() == "선택") {
-		validateMessage = '팀을 선택해 주세요.';
+		validateMessage = '팀을 선택해 주세요';
 		validateFocus = $team;
 	} else if ($gender.val() == null) {
-		validateMessage = '성별을 선택해 주세요.';
+		validateMessage = '성별을 선택해 주세요';
 		validateFocus = $gender;
 	}
 
@@ -102,14 +102,15 @@ $("#profileForm").submit(function(e) {
                       text: "기본정보가 변경 되었습니다",
                       confirmButtonText: '확인',
                       allowOutsideClick: true
+                  }).then(function() {
+                	  location.href = contextPath + "/mypage";
                   });
-            	  location.href = contextPath + "/mypage";
               }else {
             	  Swal.fire({
 	                    text: result.message,
 	                    confirmButtonText: '확인',
 	                    allowOutsideClick: true
-	                });
+            	  });
 
               }
           },

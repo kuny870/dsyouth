@@ -219,10 +219,10 @@ $("#loginForm").submit(function(e) {
     
     // input 데이터 체크 및 팝업text 입력, 포커스 입력
     if ($loginId.val() == "") {
-    	validateMessage = '아이디를 입력해 주세요.';
+    	validateMessage = '아이디를 입력해 주세요';
         validateFocus = $loginId;
     }else if($loginPw.val() == "") {
-    	validateMessage = '비밀번호를 입력해 주세요.';
+    	validateMessage = '비밀번호를 입력해 주세요';
         validateFocus = $loginPw;
     }
     

@@ -1,4 +1,4 @@
-/* 팝업창 시작 */
+/* �뙘�뾽李� �떆�옉 */
 .noticeClose {
        background-color: #333333;
       color: #ffffff ;
@@ -34,7 +34,7 @@
 	left:0; 
 	top:0; 
 }
-/* 팝업창 끝 */
+/* �뙘�뾽李� �걹 */
 
 /*login.html*/
 .main_title{
@@ -422,7 +422,7 @@
 	cursor: pointer;
     position: relative;
     z-index: 1;
-    padding: 0 30px;
+    padding: 0 12px;
     height: 35px;
     line-height: 38px;
     display: block;
@@ -1216,7 +1216,7 @@
     height: 2.1333333333vw !important;
 }
 
-/* �뇦猿됲�ｏ옙�젷�뜝�럩�젧�솻洹⑥삕 */
+/* 占쎈눇�뙼�맪占쏙퐦�삕占쎌졆占쎈쐻占쎈윪占쎌젳占쎌녃域밟뫁�굲 */
 .form-middle-pay{
     padding: 0 !important;
     margin: 8.88888888888vw 6.577777777777vw 0 6.577777777777vw !important;
@@ -1258,7 +1258,7 @@
 .form-middle-pay .form-pay .pay-radio-chk > span{
     color: #284AF3;
 }
-/* �뜎醫뤿？ �빊遺쏙옙 */
+/* 占쎈쐩�넫琉울폕 占쎈퉲�겫�룞�삕 */
 .form-payinfo > .title{
 	font-size: 4.8vw;
 	font-weight: 700;
@@ -1557,7 +1557,7 @@
     color: #343a40;
 }
 
-/*�썒�슣�닑�룇�뜝�럩�걦占쎈쇀�뜝占� buy-complete*/
+/*占쎌뜏占쎌뒩占쎈땻占쎈즵占쎈쐻占쎈윪占쎄괜�뜝�럥��占쎈쐻�뜝占� buy-complete*/
 .form-wrap{
     padding: 0 6.4888888888vw;
 }
@@ -1703,7 +1703,7 @@
 .address-info .col-right{
     width: 61.1555555555vw;
 }
-/*�썒�슣�닑�룇 占쎈퓛占쎈쳛占쎄틬�뜝�럥由��뼨�먯삕*/
+/*占쎌뜏占쎌뒩占쎈땻占쎈즵 �뜝�럥�뱵�뜝�럥爾쎾뜝�럡�떖占쎈쐻占쎈윥�뵳占쏙옙堉⑨옙癒��굲*/
 .cancle-info{
     padding: 7.1111111111vw 0 0 0;
 }
@@ -1730,7 +1730,7 @@
     right: 2.66666666666vw;
     bottom: 2.66666666666vw;
 }
-/* �썒�슣�닑�룇�뜝�럩�꼪�뜝�럩逾� */
+/* 占쎌뜏占쎌뒩占쎈땻占쎈즵占쎈쐻占쎈윪占쎄섈占쎈쐻占쎈윪�억옙 */
 .seller-wrap{
     height: 35.5555555555vw;
     text-align: center;
@@ -1765,7 +1765,7 @@
     font-size: 4vw;
 }
 
-/*占쎈쨨�솒怨쀫꼶 �뛾�룇瑗배맱占�*/
+/*�뜝�럥夷⑨옙�넂�⑥�リ섬 占쎈쎗占쎈즵�몭諛곕㎟�뜝占�*/
 .cancle-radio{
     display: inline-block;
 }
@@ -1778,7 +1778,7 @@
     font-size: 3.5555555555vw;
 }
 
-/* 占쎈닱筌뤾쑴踰ε뜝�럡���뜝�럥�뿴 �뜝�럩�꼪�뜝�럩逾ε뜝�럥由��뼨�먯삕 */
+/* �뜝�럥�떛嶺뚮ㅎ�뫒甕겄듬쐻占쎈윞占쏙옙占쎈쐻占쎈윥占쎈였 占쎈쐻占쎈윪占쎄섈占쎈쐻占쎈윪�앓듬쐻占쎈윥�뵳占쏙옙堉⑨옙癒��굲 */
 .container .header > .btn-screen-close{
     position: absolute;
     top: 11.8222222222vw;
@@ -2022,7 +2022,7 @@
     vertical-align: bottom;
 }
 
-/*筌롫뗄�뵥*/
+/*嶺뚮∥�뾼占쎈데*/
 .main-header > nav ul > li{
     display: inline;
 }
@@ -2091,7 +2091,7 @@
     margin: 1.7777777777vw 0 0 0;
 }
 
-/*占쎈솇筌띲끉�뻿筌ｏ옙*/
+/*�뜝�럥�냷嶺뚮씞�걠占쎈뼁嶺뚳퐦�삕*/
 .sales-wrap{
     padding: 12.4444444444vw 0 0 6.4vw;
 }
@@ -2148,7 +2148,7 @@
     padding: 7.1111111111vw 0;
 }
 
-/* �뜮袁⑹グ占쎈빍占쎈뮞 占쎌뵥筌앾옙*/
+/* 占쎈쑏熬곣뫗�궛�뜝�럥鍮띶뜝�럥裕� �뜝�럩逾η춯�빢�삕*/
 .guide-wrap > .business-guide-word{
     padding: 26.6666666666vw 0 6.2222222222vw 0;
     font-size: 4vw;
@@ -2158,7 +2158,7 @@
     font-size: 4vw;
     font-weight: 700;
 }
-/*占쎈솇筌띲끉�뻿筌ｏ옙�뵳�딅뮞占쎈뱜*/
+/*�뜝�럥�냷嶺뚮씞�걠占쎈뼁嶺뚳퐦�삕占쎈뎨占쎈봾裕욃뜝�럥諭�*/
 .sales-list{
     padding: 5.0666666666vw 0 0 0;
 }
@@ -2257,7 +2257,7 @@
     background-color: unset;
 
 }
-/*占쎈솁占쎈뱜占쎄섐筌≪뼐由�*/
+/*�뜝�럥�냱�뜝�럥諭쒎뜝�럡�꼸嶺뚢돦堉먪뵳占�*/
 .partner-row > .partner-wrap{
     position: relative;
     padding: 4.444444444vw;
@@ -2318,7 +2318,7 @@
     font-size: 2.8444444444vw;
 }
 
-/*占쎈솇筌띲끇媛숋옙�꽊�꽴占썹뵳占�*/
+/*�뜝�럥�냷嶺뚮씞�걞揶쏆닂�삕占쎄퐡占쎄슈�뜝�뜾逾녑뜝占�*/
 .sales-row > .sales-wrap{
     position: relative;
     padding: 4.444444444vw 4.444444444vw 0 4.444444444vw;
@@ -2392,7 +2392,7 @@
     font-weight: 700;
 }
 
-/*占쎈솇筌띲끇媛숋옙�꽊�꽴占썹뵳占� 占쎈�믭옙�뵠�뇡占�*/
+/*�뜝�럥�냷嶺뚮씞�걞揶쏆닂�삕占쎄퐡占쎄슈�뜝�뜾逾녑뜝占� �뜝�럥占쎈���삕占쎈턄占쎈눀�뜝占�*/
 .sales-table > .table-wrap{
     width: 91.6444444444vw;
     padding: 3.4666666666vw 0 0 0;
@@ -2483,7 +2483,7 @@
     text-decoration: none;
 }
 
-/*筌롫뗄�뵥*/
+/*嶺뚮∥�뾼占쎈데*/
 .main-header > .logo{
     float: left;
     padding: 1.51111111111vw 0 0 4.08888888888vw;

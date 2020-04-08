@@ -9,10 +9,10 @@ $("#registGroupForm").submit(function(e) {
 
 	// input 데이터 체크 및 팝업text 입력, 포커스 입력
 	if ($team.val() == "팀선택") {
-		validateMessage = '팀을 선택해 주세요.';
+		validateMessage = '팀을 선택해 주세요';
 		validateFocus = $team;
 	} else if ($gName.val() == "") {
-		validateMessage = '순명을 입력해 주세요.';
+		validateMessage = '순명을 입력해 주세요';
 		validateFocus = $gName;
 	}
 

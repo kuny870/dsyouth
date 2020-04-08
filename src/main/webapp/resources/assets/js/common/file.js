@@ -185,7 +185,7 @@ function formFileUpload() {
                             upload(input);
                         } else {
                         	Swal.fire({
-                                text: width+'x'+height+'로 업로드 해주세요.',
+                                text: width+'x'+height+'로 업로드 해주세요',
                                 confirmButtonText: '확인',
                                 allowOutsideClick: true
                             });

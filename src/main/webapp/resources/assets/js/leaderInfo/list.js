@@ -12,19 +12,19 @@ $("#registLeaderInfoForm").submit(function(e) {
 
 	// input 데이터 체크 및 팝업text 입력, 포커스 입력
 	if ($month.val() == "") {
-		validateMessage = '월을 입력해 주세요.';
+		validateMessage = '월을 입력해 주세요';
 		validateFocus = $month;
 	} else if($month.val() != "" && dateRegex.test($month.val())===false) {
 		validateMessage = '숫자만 입력해 주세요';
 		validateFocus = $month;
 	} else if ($day.val() == "") {
-		validateMessage = '일을 입력해 주세요.';
+		validateMessage = '일을 입력해 주세요';
 		validateFocus = $day;
 	} else if ($day.val() != "" && dateRegex.test($day.val())===false) {
 		validateMessage = '숫자만 입력해 주세요';
 		validateFocus = $day;
 	} else if ($originImg.val() == "") {
-		validateMessage = '이미지를 첨부해 주세요.';
+		validateMessage = '이미지를 첨부해 주세요';
 		validateFocus = $originImg;
 	}
 

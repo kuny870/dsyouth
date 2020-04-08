@@ -10,16 +10,16 @@ $("#pwEditForm").submit(function(e) {
 
 	// input 데이터 체크 및 팝업text 입력, 포커스 입력
 	if ($currentPw.val() == "") {
-		validateMessage = '현재 비밀번호를 입력해 주세요.';
+		validateMessage = '현재 비밀번호를 입력해 주세요';
 		validateFocus = $currentPw;
 	} else if ($loginPw.val() == "") {
-		validateMessage = '변경할 비밀번호를 입력해 주세요.';
+		validateMessage = '변경할 비밀번호를 입력해 주세요';
 		validateFocus = $loginPw;
 	} else if ($loginPw.val().length < 6) {
-		validateMessage = '변경할 비밀번호를 6자리 이상 입력해 주세요.';
+		validateMessage = '변경할 비밀번호를 6자리 이상 입력해 주세요';
 		validateFocus = $loginPw;
 	} else if ($loginPw.val() != $loginPwConfirm.val()) {
-		validateMessage = '변경할 비밀번호가 일치하지 않습니다.';
+		validateMessage = '변경할 비밀번호가 일치하지 않습니다';
 		validateFocus = $loginPwConfirm;
 	}
 

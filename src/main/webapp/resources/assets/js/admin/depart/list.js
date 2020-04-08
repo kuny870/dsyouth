@@ -8,7 +8,7 @@ $("#registDepartForm").submit(function(e) {
 
 	// input 데이터 체크 및 팝업text 입력, 포커스 입력
 	if ($dName.val() == "") {
-		validateMessage = '부서를 입력해 주세요.';
+		validateMessage = '부서를 입력해 주세요';
 		validateFocus = $dName;
 	}
 

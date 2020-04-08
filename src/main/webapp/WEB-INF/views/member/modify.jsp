@@ -68,13 +68,13 @@
                         <c:set var="disabled" value=""/>
                         <c:if test="${login.authId > 2}">
                         	<c:set var="disabled" value="disabled"/>
-                        	<input type="hidden" name="departId" value="${member.departId }">
-                        	<input type="hidden" name="teamId" value="${member.teamId }">
+                        	<input type="hidden" class="departId" name="departId" value="${member.departId }">
+                        	<input type="hidden" class="teamId" name="teamId" value="${member.teamId }">
                         </c:if>
                         
                         <!-- 부서 -->
                         <div class="customer-select">
-	                            <select id="departId" name="departId" onchange="getTeam(this.value);" ${disabled}>
+	                            <select class="departId" id="departId" name="departId" onchange="getTeam(this.value);" ${disabled}>
 	                            	<c:forEach var="depart" items="${departList }">
 										<c:set var="selected" value="" />
 										<c:if test="${depart.id eq member.departId}">
@@ -87,7 +87,7 @@
 	                    
 	                    <!-- 팀 -->
 	                    <div class="customer-select">
-                            <select id="teamId" name="teamId" onchange="getNewMemberDetail(this.value);" ${disabled}>
+                            <select class="teamId" id="teamId" name="teamId" onchange="getNewMemberDetail(this.value);" ${disabled}>
                             	<c:forEach var="team" items="${teamList }">
 									<c:set var="selected" value="" />
 									<c:if test="${team.id eq member.teamId}">
@@ -146,7 +146,7 @@
                     <!-- 리더 이상 -->
 	    			<c:if test="${login.authId <= 6}">
 	                    <div class="form-bottom form-bottom-fixed">                
-	                        <button class="btn modify-btn" type="submit">수정</button>
+	                        <button type="button" class="btn modify-btn" onclick="memberModify()">수정</button>
 	                    </div>
 	                </c:if>
                 </form>
@@ -154,7 +154,7 @@
                 <!-- 리더 이상 -->
                 <c:if test="${login.authId <= 6}">
 	                <div class="form-bottom form-bottom-fixed">
-	                   	<button class="btn remove-btn" onclick="memberRemove(${member.id})">삭제</button>
+	                   	<button type="button" class="btn remove-btn" onclick="memberRemove(${member.id})">삭제</button>
 	                </div>
 	            </c:if>
                 

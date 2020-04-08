@@ -77,13 +77,13 @@ $("#memberRegistForm").submit(function(e) {
 
 	// input 데이터 체크 및 팝업text 입력, 포커스 입력
 	if ($name.val() == "") {
-		validateMessage = '이름을 입력해 주세요.';
+		validateMessage = '이름을 입력해 주세요';
 		validateFocus = $name;
 	} else if ($dateOfBirth.val() != "" && dateOfBirthRegex.test($dateOfBirth.val())===false) {
-		validateMessage = '생년월일을 다시 확인해 주세요.';
+		validateMessage = '생년월일을 다시 확인해 주세요';
 		validateFocus = $dateOfBirth;
 	} else if ($htel.val() != "" && htelRegex.test($htel.val())===false) {
-		validateMessage = '휴대폰 번호를 다시 확인해 주세요.';
+		validateMessage = '휴대폰 번호를 다시 확인해 주세요';
 		validateFocus = $htel;
 	}
 
@@ -112,14 +112,15 @@ $("#memberRegistForm").submit(function(e) {
                       text: "멤버가 등록 되었습니다",
                       confirmButtonText: '확인',
                       allowOutsideClick: true
+                  }).then(function() {
+                	  location.reload();
                   });
-            	  location.reload();
               }else {
             	  Swal.fire({
             		    text: result.message,
             		    confirmButtonText: '확인',
             		    allowOutsideClick: true
-            		});
+            	  });
 
               }
           },
