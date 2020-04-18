@@ -122,7 +122,7 @@
                 <br/><br/>
 				
 				<div style="text-align: center;">
-					<button class="excel-down-btn" onclick="excelDown()" style="font-size: 3.3vw;">다운로드</button>
+					<button class="excel-down-btn" onclick="excelDown()" style="font-size: 14px;">다운로드</button>
 				</div>
 				
 				<p style="text-align:center; background:#ffffff; padding:5px; margin-top:20px;">

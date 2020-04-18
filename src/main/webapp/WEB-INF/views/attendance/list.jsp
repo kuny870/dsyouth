@@ -82,7 +82,7 @@
                     
                     <div class="attendance-table">
 					<div class="sales-table">
-			            <div class="table-wrap2">
+			            <div class="table-wrap-att">
 
 			                <table>
 			                    <thead>

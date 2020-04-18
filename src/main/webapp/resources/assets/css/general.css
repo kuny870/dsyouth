@@ -2473,6 +2473,73 @@
     text-decoration: none;
 }
 
+
+
+
+
+.sales-table > .table-wrap2 > table{
+    width: 100%;
+    border: 1px solid #fff;
+    text-align: center;
+    table-layout: fixed;
+}
+	
+.sales-table > .table-wrap2 {
+    width: 91.6444444444vw;
+    padding: 3.4666666666vw 0 0 0;
+    margin: 0 auto;
+}
+.sales-table > .table-wrap2 > table th{
+    color: #343a40;
+    background: #f6f9fa;
+    line-height: 8.8888888888vw;
+    font-size: 2.8444444444vw;
+    font-weight: 700;
+}
+
+.sales-table > .table-wrap2 > table .th-18p0{
+    width: 18.0vw
+}
+.sales-table > .table-wrap2 > table .th-30p4{
+    width: 30.4vw
+}
+
+.sales-table > .table-wrap2 > table td{
+    border: 1px solid #e8edf4;
+    font-size: 3vw;
+    vertical-align: middle;
+}
+.sales-table > .table-wrap2 > table td:first-child{
+    border-left: none;
+}
+.sales-table > .table-wrap2 > table td:last-child{
+    border-right: none;
+}
+
+
+.sales-table > .table-wrap2 > .paging{
+    padding: 3.1111111111vw 0 0 0;
+}
+
+.sales-table > .table-wrap2 > .paging li{
+    display: inline-block;
+    margin: 0 1.1377777777vw;
+}
+
+.sales-table > .table-wrap2 > .paging li > a{
+    display: block;
+    font-size: 3.2vw;
+    font-weight: 500;
+    color: #343a40;
+    text-decoration: none;
+}
+.sales-table > .table-wrap2 > .paging li > .active{
+    font-size: 4.3777777777vw;
+    color: #f63c71;
+    text-decoration: none;
+}
+
+
 /*嶺뚮∥�뾼占쎈데*/
 .main-header > .logo{
     float: left;
@@ -2604,12 +2671,74 @@
 
 /* 2020.03.02 �뙣�뱶�슜 異붽�! */
 @media (min-width: 576px) {
+	input[type=checkbox]{
+		width:30px;
+		height:30px;
+	}
+	.layer_fixed {
+		height: 165px !important;
+		bottom: -13px;
+	}
 	.layer_fixed3 {
-		height: 70px;
+		height: 80px;
 		padding-top: 5px;
 	}
-	.btn {
-		font-size: 22px !important;
+	.customer-select-search select {
+		height: 35px !important;
+		font-size: 15px !important;
+	}
+	.md-input2 {
+	    font-size: 18px;
+	    width: 75%;
+	    height: 35px;
+	    border-radius: 2.666667px;
+	    border-width: 1.333333px;
+	    padding: 0 5;
+	}
+	.attendance-list-btn {
+		height: 35px;
+	    font-size: 17px;
+	}
+	.member-list-btn {
+		height: 35px;
+		margin-left: -10px;
+		font-size: 17px;
+	}
+	.radio-gender > .ico {
+		width: 5.6vw;
+		height: 5.6vw;
+		margin-top: 22px;
+	}
+	.admin-team-select {
+		font-size: 25px;
+	}
+	.admin-team-input {
+		font-size: 25px;
+	}
+	.md-input {
+		font-size: 25px;
+	}
+	.md-button {
+		font-size: 35px;
+	}
+	.md-button2 {
+		font-size: 25px;
+	}
+	.container .form .form-bottom button.btn {
+		height: 9.4vw;
+		font-size: 4vw;
+	}
+	.container .form .form-bottom-radio {
+	    padding: 3.244444vw 0px 30px 29.711111vw;
+	}
+	.container .form .form-bottom button.modify-btn {
+		height: 9.4vw;
+		font-size: 4vw;
+	}
+	.container .form .form-bottom button.remove-btn {
+    	height: 9.4vw;
+    	font-size: 4vw;
+    	margin-top: -60px;
 	}
 	.window{
 	    position: fixed;
