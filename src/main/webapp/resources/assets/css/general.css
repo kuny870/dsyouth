@@ -253,7 +253,7 @@
 .admin-reset-btn {
 	width: 12vw;
 	height: 7vw;
-	font-size: 2.8vw;
+	font-size: 2.6vw;
 	background-color: red;
 }
 
@@ -2474,9 +2474,7 @@
 }
 
 
-
-
-
+/* 권한 관리용 table css */
 .sales-table > .table-wrap2 > table{
     width: 100%;
     border: 1px solid #fff;
@@ -2500,8 +2498,8 @@
 .sales-table > .table-wrap2 > table .th-18p0{
     width: 18.0vw
 }
-.sales-table > .table-wrap2 > table .th-30p4{
-    width: 30.4vw
+.sales-table > .table-wrap2 > table .th-26p3{
+    width: 26.3vw
 }
 
 .sales-table > .table-wrap2 > table td{

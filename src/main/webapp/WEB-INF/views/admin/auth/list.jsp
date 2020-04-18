@@ -32,7 +32,7 @@
 			                <table>
 			                    <thead>
 			                        <tr>
-			                            <th class="th-30p4">권한명</th>
+			                            <th class="th-26p3">권한명</th>
 			                            <th>권한내용</th>
 			                            <th class="th-18p0"></th>
 			                        </tr>
