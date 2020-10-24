@@ -24,6 +24,7 @@ public enum ResponseCode {
 	, NO_SUCH_ALGORITHM_EXCEPTION("ERR0016", "현재의 환경에서는 암호 알고리즘이 사용 불가합니다")
 	, UNSUPPORTED_ENCODING_EXCEPTION("ERR0017", "인코딩 예러가 발생했습니다")
 	, RETREATTABLE_DUPLICATED("ERR0018", "이미 존재하는 수련회명입니다")
+	, EXCELDOWN_FAIL("ERR0019", "순편성을 먼저 진행해 주세요")
 	;
 
 	/**

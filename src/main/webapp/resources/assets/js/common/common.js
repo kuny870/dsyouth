@@ -60,7 +60,7 @@ $(document).ready(function(){
 });
 
 
-function excelDown(year, month) {
+/*function excelDown(year, month) {
 
 	var season = "";
 	
@@ -71,7 +71,7 @@ function excelDown(year, month) {
 	}
 	
 	location.href = contextPath + "/excelDownload?year=" + year + "&season=" + season;
-}
+}*/
 
 // input 자리수 제한
 function numberMaxLength(e) { if(e.value.length > e.maxLength) { e.value = e.value.slice(0, e.maxLength); }}
@@ -156,7 +156,17 @@ function excelDownPopup(){
 function excelDown() {
 	var year = $('#yearExcel').val();
 	var season = $('#seasonExcel').val();
-	location.href = contextPath + "/attendance/excelDownload?year=" + year + "&season=" + season;
+	var month = "";
+
+	if(season == "상반기") {
+		month = "1";
+	}else if(season == "하반기") {
+		month = "7";
+	}else if(season == "코로나순") {
+		month = "10";
+	}
+	
+	location.href = contextPath + "/attendance/excelDownload?year=" + year + "&month=" + month + "&season=" + season;
 	
 	$("#mask, .window").hide();
 }

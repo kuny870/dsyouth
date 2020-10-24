@@ -30,7 +30,7 @@
    				</span>
 			    <div class="main-title-att text-center">
 			    	출석부
-			    	<img src="${resourcesPath }/assets/images/download_att.jpg" class="attendance-img" onclick="excelDownPopup()">
+			    	<img src="${resourcesPath }/assets/images/btn_excel.png" class="attendance-img" onclick="excelDownPopup()" style="margin-left: 27.8vw; margin-top: 0.3vw; width: 8vw;">
 			    </div>
             </div>
 				<div class="div-container">
@@ -119,10 +119,19 @@
 										</c:when>
 										<c:otherwise>
 											
+											<c:set var="index" value="1" />
 											<c:forEach var="att" items="${attendanceList}" varStatus="i">
 					                    		<input type="hidden" id="${att.id}" name="aId"/>
 					                    		<tr>
-						                            <td>${i.index + 1}</td>
+					                    			<c:choose>
+					                    				<c:when test="${att.attYn == 'Y' }">
+					                    					<td>${index}</td>
+					                    					<c:set var="index" value="${index+1}" />
+					                    				</c:when>
+					                    				<c:otherwise>
+					                    					<td></td>
+					                    				</c:otherwise>
+						                            </c:choose>
 						                            
 						                            <c:set var="bold" value=""/>
 						                            <!-- teamId 4 : 1새가족, 8 : 2새가족 -->
@@ -147,7 +156,7 @@
 						                            
 						                            <c:set var="bold" value=""/>
 						                            <c:set var="italic" value=""/>
-						                            <c:if test="${att.groupGrade == '순장' }">
+						                            <c:if test="${att.groupGrade == '순장' && att.attYn == 'Y'}">
 						                            	<c:set var="bold" value="700"/>
 						                            </c:if>
 						                            <c:if test="${att.member.memState != '1' }">
@@ -197,12 +206,12 @@
 										                            	</c:if>
 										                            </td>
 										                            <td style="font-weight: ${bold}">${att.member.guider}</td>
-							                            			</c:when>
-							                            			<c:otherwise>
-							                            				<td>2부</td>
-								                            			<td></td>
-							                            			</c:otherwise>
-							                            		</c:choose>
+						                            			</c:when>
+						                            			<c:otherwise>
+						                            				<td style="font-style: ${italic};">2부</td>
+							                            			<td></td>
+						                            			</c:otherwise>
+						                            		</c:choose>
 				                            			</c:when>
 				                            			
 				                            			<c:otherwise>
@@ -246,7 +255,7 @@
 										                            	</c:if>
 							                            			</c:when>
 							                            			<c:otherwise>
-							                            				2부
+						                            					2부
 							                            			</c:otherwise>
 							                            		</c:choose>
 								                            </td>

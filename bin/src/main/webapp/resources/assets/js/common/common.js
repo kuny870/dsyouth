@@ -116,11 +116,6 @@ function memberSearch() {
 	pageModule.searchPage(param);
 }
 
-// 출석부 엑셀 다운로드 팝업
-function excelDownPopup(){
-    wrapWindowByMask();
-}
-
 // 출석부 엑셀 다운 실제 구현부
 function excelDown() {
 	var year = $('#yearExcel').val();

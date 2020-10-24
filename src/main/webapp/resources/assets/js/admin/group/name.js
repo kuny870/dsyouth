@@ -1,3 +1,38 @@
+function getSeason(sParam){
+    var $target = $("select[name='season']");
+     
+    $target.empty();
+    if(sParam == ""){
+    	$target.append("<option value=''>-</option>");
+        return;
+    } else if (sParam != "") {
+    	
+	    $.ajax({
+	        type: "POST",
+	        url: contextPath + "/rest/select/season",
+	        async: false,
+	        data:{ year : sParam },
+	        dataType: "json",
+	        success: function(result) {
+	            if(result.data.length == 0){
+	                $target.append("<option value=''>-</option>");
+	            }else{
+	                $(result.data).each(function(i){
+	                    $target.append("<option value=" + result.data[i].season + ">"+ result.data[i].season +"</option>");
+	                });
+	            }
+	        }, error:function(xhr){
+	            console.log(xhr.responseText);
+	            alert("시즌 정보를 불러오는데 실패 했습니다.");
+	            return;
+	        }
+	    });
+	    
+    }
+    
+}
+
+
 //순명 등록
 $("#registGroupForm").submit(function(e) {
 

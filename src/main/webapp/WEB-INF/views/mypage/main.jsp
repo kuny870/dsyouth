@@ -6,7 +6,7 @@
     <jsp:include page="/WEB-INF/views/layouts/header.jsp" flush="false" />
     
     <!-- TODO : 공지 레이어 팝업 -->
-    <jsp:include page="/WEB-INF/views/admin/pop/notice.jsp" flush="false" />
+    <%-- <jsp:include page="/WEB-INF/views/admin/pop/notice.jsp" flush="false" /> --%>
 
 	<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 	<c:set var="resourcesPath" value="${contextPath}/resources" />
